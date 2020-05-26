@@ -1,6 +1,4 @@
 def app():
-
-
     def inputJob():
         jobsDone = int(input("How many jobs have you done today? "))
         jobsDoneId =  []
@@ -10,49 +8,52 @@ def app():
             jobsDoneId.append(jobId)
             moneyEarned = float(input("How much did you earn on this job? "))
             totalMoneyEarned.append(moneyEarned)
-        return jobId, jobsDone, jobsDoneId, totalMoneyEarned
+        return jobsDone, jobsDoneId, totalMoneyEarned
 
     def money(totalMoneyEarned):
         sumMoney = 0
-        print(totalMoneyEarned)
         for i in totalMoneyEarned:
             sumMoney = sumMoney + i
         return sumMoney
 
-    def inputRating(jobsDone):
+    def inputRating(jobsDone, jobsDoneId):
         ratings = []
         for x in range(int(jobsDone)):
             currentJobid = input("Job Id for job whose rating you want to give: ")
-            ratingForJob = int(input("What is the rating? "))
-            ratings.append(ratingForJob)
-            print(ratings)
-        return currentJobid, ratings
+            if currentJobid in jobsDoneId:
+                ratingForJob = int(input("What is the rating? "))
+                ratings.append(ratingForJob)
+            else:
+                print("The job Id is not in our records")
+                inputRating(jobsDone, jobsDoneId)
 
-    def rating(jobId, currentJobid, ratings, jobsDone, jobsDoneId):
+        return ratings
+
+    def rating(ratings):
         sumRatings = 0
         avgRatings = 0
         for rating in ratings:
-            if currentJobid in jobsDoneId:
-                sumRatings = sumRatings + rating
-                print(sumRatings)
-                avgRatings = sumRatings / len(ratings)
-                print(avgRatings)
-            else:
-                print("The job Id is not in our records")
-                inputRating(jobsDone)
-        return jobsDoneId, avgRatings
+            sumRatings = sumRatings + rating
+            avgRatings = sumRatings / len(ratings)
+        return avgRatings
 
-    def output(jobsDone, sumMoney, avgRatings):
+    def convert(sumMoney):
+        kenyan = sumMoney * 103
+        return kenyan
+
+    def output(jobsDone, sumMoney, avgRatings, kenyan):
         print("You have done "  + str(jobsDone) + " job during this period")
-        print("And you have earned " + str(sumMoney))
-        print("Your average rating for this period is: " + str(avgRatings))
+        print("And you have earned $" + str(round(sumMoney, 2)) + " dollars")
+        print("Which translates to " + str(int(kenyan)) + " Kenyan Shillings")
+        print("Your average rating for this period is: " + str(round(avgRatings, 1)))
 
     def main():
-        jobId, jobsDone, jobsDoneId, totalMoneyEarned = inputJob()
+        jobsDone, jobsDoneId, totalMoneyEarned = inputJob()
         sumMoney = money(totalMoneyEarned)
-        currentJobid, ratings = inputRating(jobsDone)
-        jobsDoneId, avgRatings = rating(jobId, currentJobid, ratings, jobsDone, jobsDoneId)
-        output(jobsDone, sumMoney, avgRatings)
+        ratings = inputRating(jobsDone, jobsDoneId)
+        avgRatings = rating(ratings)
+        kenyan = convert(sumMoney)
+        output(jobsDone, sumMoney, avgRatings, kenyan)
 
     main()
 app()
