@@ -2,7 +2,7 @@ def app():
     
 
     def inputJob():
-        jobsDone = int(input("How many jobs have you done today?"))
+        jobsDone = int(input("How many jobs have you done today? "))
         for x in range(int(jobsDone)):
             jobId = input("Enter the Job Id: ")
             moneyEarned = float(input("How much did you earn on this job? "))
@@ -23,22 +23,23 @@ def app():
         ratingForJob = int(input("What is the rating? "))
         return currentJobid, ratingForJob
     
-    def rating(jobId, currentJobid, ratingForJob):
+    def rating(jobId, currentJobid, ratingForJob, jobsDone):
         jobsDoneId = []
         jobsDoneId.append(jobId)
-        if currentJobid in jobsDoneId:
-            ratings = []
-            ratings.append(ratingForJob)
-            sumRatings = 0
-            avgRatings = 0
-            for x in ratings:
-                sumRatings = sumRatings + x
-                avgRatings = sumRatings / len(ratings)
-                print(avgRatings)
-            
-        else:
-            print("The job Id is not in our records")
-            inputRating()
+        ratings = []
+        sumRatings = 0
+        avgRatings = 0
+        for x in range(int(jobsDone)):
+            if currentJobid in jobsDoneId:
+                ratings.append(ratingForJob)
+                for rating1 in ratings:
+                    sumRatings = sumRatings + rating1
+                    avgRatings = sumRatings / len(ratings)
+                    print(avgRatings)
+                
+            else:
+                print("The job Id is not in our records")
+                inputRating()
         return jobsDoneId, avgRatings
 
     def output(jobsDone, sumMoney, avgRatings):
@@ -50,7 +51,7 @@ def app():
         jobId, moneyEarned, jobsDone = inputJob()
         sumMoney = money(moneyEarned)
         currentJobid, ratingForJob = inputRating()
-        jobsDoneId, avgRatings = rating(jobId, currentJobid, ratingForJob)
+        jobsDoneId, avgRatings = rating(jobId, currentJobid, ratingForJob, jobsDone)
         output(jobsDone, sumMoney, avgRatings)
 
 
