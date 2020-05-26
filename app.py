@@ -25,10 +25,13 @@ def main():
             sumRatings = 0
             for x in ratings:
                 sumRatings = sumRatings + x
-            return sumRatings
+                avgRatings = sumRatings / len(ratings)
+            return avgRatings
         else:
             print("The job Id is not in our records")
             inputRating()
+    def output():
+        
 
 
 
