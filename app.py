@@ -40,6 +40,7 @@ def app():
     def convert(sumMoney):
         kenyan = sumMoney * 103
         return kenyan
+        print()
 
     def output(jobsDone, sumMoney, avgRatings, kenyan):
         print("You have done "  + str(jobsDone) + " job during this period")
