@@ -57,5 +57,5 @@ def app():
         output(jobsDone, sumMoney, avgRatings, kenyan)
 
     main()
-if __name__ == "__main__":
-    app()
+
+app()

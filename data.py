@@ -1,4 +1,0 @@
-def data():
-    pass
-
-data()
