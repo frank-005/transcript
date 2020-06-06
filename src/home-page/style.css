@@ -1,0 +1,51 @@
+body {
+  background-color: #999999;
+  color: wheat;
+  text-align: center;
+  font-family: monospace;
+  font-size: large;
+  margin: 0px;
+}
+
+.head {
+  height: 35px;
+  width: 100%;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+
+input {
+  background-color: white;
+  border-radius: 5px;
+  border-color: wheat;
+  opacity: 100%;
+}
+
+.top-bar li {
+  diplay: inline-block;
+  color: white;
+  float: right;
+  padding: 15px;
+  margin: 0;
+}
+
+.top-bar ul {
+  list-style: none;
+}
+
+.input-jobs {
+  height: 500px;
+  background-image: url("imgs/d3.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 0px;
+  padding-top: 290px;
+  font-size: 32px;
+  color: white;
+
+}
+
+.input-box {
+  background-color: #999999;
+}
