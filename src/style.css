@@ -10,7 +10,6 @@ body {
 .head {
   height: 35px;
   width: 100%;
-  background-color: grey;
   margin-top: 0;
   padding-top: 0;
 }
@@ -19,4 +18,10 @@ body {
 input {
   background-color: wheat;
   border-radius: 5px;
+}
+
+.top-bar {
+  /*diplay: inline; */
+  color: white;
+  float: right;
 }
