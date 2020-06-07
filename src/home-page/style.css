@@ -1,5 +1,5 @@
 body {
-  background-color: #999999;
+  background-color: rgb(85, 84, 84);
   color: wheat;
   text-align: center;
   font-family: monospace;
@@ -7,27 +7,32 @@ body {
   margin: 0px;
 }
 
+h1 {
+  color: white;
+}
+
 .head {
-  height: 35px;
+  height: 50px;
   width: 100%;
   margin-top: 0;
-  padding-top: 0;
+  position: fixed;
 }
 
 
 input {
-  background-color: white;
+  background-color: wheat;
   border-radius: 5px;
   border-color: wheat;
   opacity: 100%;
 }
 
 .top-bar li {
-  diplay: inline-block;
+  display: inline-block;
   color: white;
   float: right;
   padding: 15px;
   margin: 0;
+
 }
 
 .top-bar ul {
@@ -46,6 +51,12 @@ input {
 
 }
 
-.input-box {
-  background-color: #999999;
+.input-jobs button {
+  height: 40px;
+  font-family: monospace;
+  border-radius: 10px;
+  border-color: rgba(85, 84, 84);
+  background-color: rgb(85, 84, 84);
+  font-size: 24px;
+
 }
