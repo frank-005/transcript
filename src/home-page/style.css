@@ -4,7 +4,7 @@ body {
   text-align: center;
   font-family: monospace;
   font-size: large;
-  margin: 0px;
+  margin: 0;
 }
 
 h1 {
@@ -47,13 +47,16 @@ input {
   margin-top: 0px;
   padding-top: 290px;
   font-size: 32px;
-  color: white;
+  color: grey;
+  font-weight: bold;
+  
 
 }
 
 .input-jobs button {
   height: 50px;
-  color: black;
+  color: grey;
+  font-weight: bolder;
   font-family: monospace;
   border-radius: 10px;
   border-color: wheat;
@@ -66,4 +69,15 @@ input {
   border-radius: 50%;
   height: 160px;
   width: 160px;
+}
+
+.footer {
+  background-color: black;
+  margin-bottom: 0;
+  position: relative;
+  height: 150px;
+  bottom: 0;
+  width: 100%;
+  float: left;
+
 }
