@@ -1,13 +1,16 @@
 def app():
     def inputJob():
-        jobsDone = int(input("How many jobs have you done today? "))
-        jobsDoneId =  []
+        jobsDone = 0
+        jobsDoneId = []
         totalMoneyEarned = []
-        for x in range(int(jobsDone)):
+        if jobsDone != "":
             jobId = input("Enter the Job Id: ")
             jobsDoneId.append(jobId)
-            moneyEarned = float(input("How much did you earn on this job? "))
+            moneyEarned = float(
+                input("How much did you earn on this job? (press <ENTER> to quit.)"))
             totalMoneyEarned.append(moneyEarned)
+        else:
+            pass
         return jobsDone, jobsDoneId, totalMoneyEarned
 
     def money(totalMoneyEarned):
@@ -19,7 +22,8 @@ def app():
     def inputRating(jobsDone, jobsDoneId):
         ratings = []
         for x in range(int(jobsDone)):
-            currentJobid = input("Job Id for job whose rating you want to give: ")
+            currentJobid = input(
+                "Job Id for job whose rating you want to give: ")
             if currentJobid in jobsDoneId:
                 ratingForJob = int(input("What is the rating? "))
                 ratings.append(ratingForJob)
@@ -43,10 +47,11 @@ def app():
         print()
 
     def output(jobsDone, sumMoney, avgRatings, kenyan):
-        print("You have done "  + str(jobsDone) + " job during this period")
+        print("You have done " + str(jobsDone) + " job during this period")
         print("And you have earned $" + str(round(sumMoney, 2)) + " dollars")
         print("Which translates to " + str(int(kenyan)) + " Kenyan Shillings")
-        print("Your average rating for this period is: " + str(round(avgRatings, 1)))
+        print("Your average rating for this period is: " +
+              str(round(avgRatings, 1)))
 
     def main():
         jobsDone, jobsDoneId, totalMoneyEarned = inputJob()
@@ -57,5 +62,7 @@ def app():
         output(jobsDone, sumMoney, avgRatings, kenyan)
 
     main()
+
+
 if __name__ == "__main__":
     app()
