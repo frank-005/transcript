@@ -172,20 +172,35 @@ input {
 }
 
 .form {
-  color: wheat;
-  background-color: rgb(77, 98, 206);
-  opacity: 0.3;
+  color: white;
   height: 140px;
-  margin: 20px;
-  padding: 30px;
   font-family: sans-serif;
   font-size: 14px;
   font-weight: lighter;
-  ;
+}
+
+.form ::placeholder {
+  color: #f9ecd2;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.form p {
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-family: monospace;
 }
 
 .input1 {
-  margin: 5px;
+  height: 30px;
+  width: 250px;
+  margin: 10px;
+  background: #817e7e;
+  border: none;
+  border-radius: 2px;
+}
+
+input[type=text] {
+  color: whitesmoke;
   z-index: -1;
-  position: absolute;
 }
