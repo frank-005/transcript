@@ -66,7 +66,19 @@ input {
   font-size: 24px;
   opacity: 1;
   border: none;
-  transition-duration: 0.4s;
+  transition-duration: 0.2s;
+  animation: fade 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.6;
+    margin-bottom: 150px;
+  }
+  to {
+    opacity: 1;
+    margin-bottom: 0;
+  }
 }
 
 .input-jobs button:hover {
@@ -123,9 +135,9 @@ input {
 
 .line {
   width: 30px;
-  height: 1px;
+  height: 2px;
   background: white;
-  margin: 6px;
+  margin: 4px;
   display: flex;
 }
 
@@ -149,4 +161,31 @@ input {
   background: rgb(85, 84, 84);
   opacity: 0.3;
   display: flex;
+}
+
+.sign-up {
+  background: rgb(85, 84, 84);
+  border-radius: 35px;
+  height: 10px;
+  text-align: center;
+  border: none;
+}
+
+.form {
+  color: wheat;
+  background-color: rgb(77, 98, 206);
+  opacity: 0.3;
+  height: 140px;
+  margin: 20px;
+  padding: 30px;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: lighter;
+  ;
+}
+
+.input1 {
+  margin: 5px;
+  z-index: -1;
+  position: absolute;
 }
